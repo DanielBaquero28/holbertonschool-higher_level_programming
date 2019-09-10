@@ -1,3 +1,3 @@
 #!/usr/bin/python3
-for i in range(1, 98):
+for i in range(0, 99):
     print(i, "=", hex(i), sep=" ")
