@@ -1,8 +1,5 @@
 #!/usr/bin/python3
-for letter in range(ord('z') + 1, ord('a')):
-    if (ord(letter) % 2 != 0):
-        character = chr(ord(letter) - 32)
-        print("{}".format(character), end="")
-    else:
-        character = letter
-        print("{}".format(character), end="")
+for i in range(90, 64, -1):
+    if i % 2 == 0:
+        i += 32
+    print(chr(i), end="")
