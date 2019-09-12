@@ -2,3 +2,5 @@
 add_0.py
 #Ignoring __pycache__
 __pycache__
+#Ignoring file
+calculator_1.py
