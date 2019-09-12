@@ -1,2 +1,4 @@
 #Ignoring add_0.py
 add_0.py
+#Ignoring __pycache__
+__pycache__
