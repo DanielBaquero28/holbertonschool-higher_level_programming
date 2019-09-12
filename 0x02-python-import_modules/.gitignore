@@ -4,3 +4,5 @@ add_0.py
 __pycache__
 #Ignoring file
 calculator_1.py
+#Ignoring some more
+hidden_4.pyc
