@@ -1,6 +1,6 @@
 <html>
 <h1>Project: More Data Structures!</h1>
-<p><strong>In this project we will review sets and dictionaries as well as: lambda, map, filter and reduce. Also different mehtods that works with sets.</strong></p>
+<p><strong>In this project we will review sets and dictionaries as well as: lambda, map, filter and reduce. Also different methods that works with sets.</strong></p>
 <body>
 <li>Task 0: Write a function that computes the square value of all integers of a matrix.</li>
 <li>Task 1: Write a function that replaces all occurrences of an element by another in a new list.</li>
