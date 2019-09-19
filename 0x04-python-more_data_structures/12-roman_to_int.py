@@ -3,6 +3,8 @@ def roman_to_int(roman_string):
 
     rom_dic = {"I": 1, "V": 5, "X": 10, "L": 50, "C": 100, "D": 500, "M": 1000}
 
+    if not roman_string or not type(str):
+        return (0)
     val = 0
     for i in range(0, len(roman_string)):
         if i > 0 and rom_dic[roman_string[i]] > rom_dic[roman_string[i - 1]]:
