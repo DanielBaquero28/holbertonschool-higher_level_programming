@@ -1,2 +1,4 @@
 #Ignoring iterated files saved in buffer
 *~
+#Ignoring __pycache__ directory
+__pycache__
