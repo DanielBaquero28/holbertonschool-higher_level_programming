@@ -1,0 +1,83 @@
+==============================
+Doctest in 2-matrix_divided.py
+==============================
+
+This is a .txt file that tests all of the edge cases of the program:
+2-matrix_divided.py
+
+It has one function: matrix_divided()
+
+Numbers
+=======
+
+``matrix_divided()`` returns new_matriz with the elements divided by div.
+For numbers, that value is equivalent to using the ``/`` operator.
+
+::
+
+	>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+	>>> matrix_divided([[1, 2, 3],[4, 5, 6]], 1)
+	[[1.0, 2.0, 3.0], [4.0, 5.0, 6.0]]
+
+
+Float type numbers are accepted as elements in the lists but casted to integer.
+
+::
+
+	>>> matrix_divided([[1.0, 2.0, 3.0],[4.0, 5.0, 6.0]], 1.0)
+	[[1.0, 2.0, 3.0], [4.0, 5.0, 6.0]]
+
+
+Tuples are not accepted as only lists are taken into account.
+
+::
+
+	>>> matrix_divided(((1, 2, 3),(4, 5, 6)), 1)
+	Traceback (most recent call last):
+	TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Non-Numbers
+===========
+
+Other data types besides int or float are not accepted as elements in the list.
+
+::
+
+A string as en element is not accepted as an element of the list.
+
+::
+
+	>>> matrix_divided([[1, 2, '3'],[4, 5, 6]], 1)
+	Traceback (most recent call last):
+	TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Other data types besides int of float are not accepted as div.
+
+::
+
+	>>> matrix_divided([[1, 2, 3],[4, 5, 6]], 'monty')
+	Traceback (most recent call last):
+	TypeError: div must be a number
+
+0 as the value of div is not accepted.
+
+::
+
+	>>> matrix_divided([[1, 2, 3],[4, 5, 6]], 0)
+	Traceback (most recent call last):
+	ZeroDivisionError: division by zero
+
+List Length
+===========
+
+The length of all of the lists must be the same otherwise it returns an error.
+
+::
+
+Different length between the lists is not accepted.
+
+::
+
+	>>> matrix_divided([[1, 2],[3, 4, 5, 6]], 1)
+	Traceback (most recent call last):
+	TypeError: Each row of the matrix must have the same size
