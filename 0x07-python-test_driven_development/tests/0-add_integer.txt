@@ -1,0 +1,121 @@
+============================
+Doctest in 0-add_integer.py
+============================
+
+This is a .txt file that tests all of the edge cases of the program:
+0-add_integer.py
+
+It has one function: add_integer()
+
+Numbers
+=======
+
+``add_integer()`` returns the sum of it's arguments. For numbers,
+that value is equivalent to using the ``+`` operator.
+
+::
+
+	>>> add_integer = __import__('0-add_integer').add_integer
+	>>> add_integer(2, 3)
+	5
+
+It also works with negative numbers.
+
+::
+
+	>>> add_integer(2, -3)
+	-1
+
+Float type numbers are accepted but casted to an integer.
+
+::
+
+	>>> add_integer(2.0, 3)
+	5
+
+Non-Numbers
+===========
+
+Doesn't accept other data types besides ints and floats.
+
+::
+
+	String as the first argument doesn't work.
+
+::
+
+	>>> add_integer("Hello", 3)
+	Traceback (most recent call last):
+	TypeError: a must be an integer
+
+	String as the second argument doesn't work.
+
+::
+
+	>>> add_integer(2, "Hello")
+	Traceback (most recent call last):
+	TypeError: b must be an integer
+
+	List as the first argument doesn't work.
+
+::
+
+	>>> add_integer([1, 2, 3], 4)
+	Traceback (most recent call last):
+	TypeError: a must be an integer
+
+	List as the second argument doesn't work.
+
+::
+
+	>>> add_integer(4, [1, 2, 3])
+	Traceback (most recent call last):
+	TypeError: b must be an integer
+
+
+Arguments
+=========
+
+Accepts only when there are 1 or 2 arguments.
+
+::
+
+	Accepts 1 argument since the second argument is already initialized.
+
+::
+
+	>>> add_integer(5)
+	103
+
+::
+
+	Doesn't accept 0 arguments.
+
+::
+
+	>>> add_integer()
+	Traceback (most recent call last):
+	TypeError: add_integer() missing 1 required positional argument: 'a'
+
+	Doesn't accept more than 2 arguments.
+
+::
+
+	>>> add_integer(1, 4, 7)
+	Traceback (most recent call last):
+	TypeError: add_integer() takes from 1 to 2 positional arguments but 3 were given
+
+None Case
+=========
+
+None isn't a valid argument for the program.
+
+::
+
+	Dosen't accept None as first argument.
+
+::
+
+	>>> add_integer(None)
+	Traceback (most recent call last):
+	TypeError: a must be an integer
