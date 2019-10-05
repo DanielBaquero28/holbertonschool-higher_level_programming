@@ -67,6 +67,22 @@ Other data types besides int of float are not accepted as div.
 	Traceback (most recent call last):
 	ZeroDivisionError: division by zero
 
+Doesn't accept one of it's elements because it's a tuple.
+
+::
+
+	>>> matrix_divided([[1, -1], (2, -2), [3, -3]], 1)
+    	Traceback (most recent call last):
+    	TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Doesn't accept div as a list.
+
+::
+
+	>>> matrix_divided([[5.7, 8.1], [7.7, 4.9]], [2])
+    	Traceback (most recent call last):
+	TypeError: div must be a number
+
 List Length
 ===========
 
@@ -81,3 +97,14 @@ Different length between the lists is not accepted.
 	>>> matrix_divided([[1, 2],[3, 4, 5, 6]], 1)
 	Traceback (most recent call last):
 	TypeError: Each row of the matrix must have the same size
+
+Arguments
+=========
+
+It doesn't accept more than 2 arguments
+
+::
+
+	>>> matrix_divided([[1, 2], [3, 4]], 1, 32)
+	Traceback (most recent call last):
+	TypeError: matrix_divided() takes 2 positional arguments but 3 were given

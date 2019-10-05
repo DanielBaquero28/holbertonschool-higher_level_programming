@@ -1,0 +1,124 @@
+============================
+Doctest in 3-say_my_name.py
+============================
+
+This is a .txt file that tests all of the edge cases of the program:
+3-say_my_name.py
+
+It has one function: say_my_name()
+
+Strings
+=======
+
+``say_my_name()`` prints the full name of a person.
+
+::
+
+	>>> say_my_name = __import__('3-say_my_name').say_my_name
+	>>> say_my_name("John", "Deere")
+	My name is John Deere
+
+
+It also accepts only one string as argument, since the last name is empty.
+
+::
+
+	>>> say_my_name("FirstName")
+	My name is FirstName 
+
+It does accept a number casted into a string (in parenthesis).
+
+::
+
+	>>> say_my_name("First12", "Second19")
+	My name is First12 Second19
+
+Non-Strings
+===========
+
+It doesn't accept other data types besides strings.
+
+::
+
+It doesn't accept a number as the first argument.
+
+::
+
+	>>> say_my_name(34, "He")
+	Traceback (most recent call last):
+	TypeError: first_name must be a string
+
+It doesn't accept a number as the second argument.
+
+::
+
+	>>> say_my_name("He", 34)
+	Traceback (most recent call last):
+	TypeError: last_name must be a string
+
+It doesn't accept None as an argument.
+
+::
+
+	>>> say_my_name(None)
+	Traceback (most recent call last):
+	TypeError: first_name must be a string
+
+It doesn't accept a list as the first argument.
+
+::
+
+	>>> say_my_name([1, 2, 3, 4], "He")
+	Traceback (most recent call last):
+	TypeError: first_name must be a string
+
+It doesn't accept a list as the second argument.
+
+::
+
+	>>> say_my_name("He", [1, 2, 3, 4])
+	Traceback (most recent call last):
+	TypeError: last_name must be a string
+
+It doesn't accept a tuple as the first argument.
+
+::
+
+	>>> say_my_name((1, 2, 3), "SecondName")
+	Traceback (most recent call last):
+	TypeError: first_name must be a string
+
+It doesn't accept a tuple as the second argument.
+
+::
+
+	>>> say_my_name("FirstName", (1, 2, 3))
+	Traceback (most recent call last):
+	TypeError: last_name must be a string
+
+It doesn't accept a float as the first argument.
+
+::
+
+	>>> say_my_name(3.0, "SecondName")
+	Traceback (most recent call last):
+	TypeError: first_name must be a string
+
+It doesn't accept a float as the second argument.
+
+::
+
+        >>> say_my_name("FirstName", 16)
+        Traceback (most recent call last):
+        TypeError: last_name must be a string
+
+Arguments
+=========
+
+It doesn't accept more than 2 arguments
+
+::
+
+	>>> say_my_name("FirstName", "LastName", "ThirdName")
+	Traceback (most recent call last):
+	TypeError: say_my_name() takes from 1 to 2 positional arguments but 3 were given
