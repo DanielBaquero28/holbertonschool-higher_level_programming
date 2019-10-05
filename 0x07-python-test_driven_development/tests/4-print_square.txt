@@ -56,6 +56,29 @@ Strings are not accepted as an argument.
     	 Traceback (most recent call last):
     	 TypeError: size must be an integer
 
+Doesn't accept a list as an argument.
+
+::
+
+	>>> print_square([1, 2, 3, 4, 5, 6, 7])
+	Traceback (most recent call last):
+	TypeError: size must be an integer
+
+Doesn't accept a tuple as an argument.
+
+::
+
+	>>> print_square((1, 2, 3, 4, 5, 6))
+	Traceback (most recent call last):
+	TypeError: size must be an integer
+
+Doesn't accept an invalid argument as an argument.
+
+::
+
+	>>> print_square((1, 2, 3, 4, 5, ,6))
+	Traceback (most recent call last):
+	SyntaxError: invalid syntax
 
 None Case
 =========
