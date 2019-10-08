@@ -4,7 +4,7 @@ class Rectangle:
     Class that defines a Rectangle.
     """
 
-    number_of_instances= 0
+    number_of_instances = 0
     print_symbol = '#'
 
     def __init__(self, width=0, height=0):
@@ -76,7 +76,7 @@ class Rectangle:
         for i in range(self.__height):
             rectangle += (str(self.print_symbol * self.__width) + '\n')
 
-        return (rectangle)
+        return (rectangle[:-1])
 
     def __repr__(self):
         """
