@@ -4,3 +4,7 @@
 *.txt
 #Ignoring .json files
 *.json
+#Ignoring 10-my_class.py
+10-my_class.py
+#Ignoring 10-my_class_2.py
+10-my_class_2.py
