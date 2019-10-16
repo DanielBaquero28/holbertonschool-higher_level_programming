@@ -15,7 +15,7 @@
 <li>Task 10: Write a class Square that inherits from Rectangle (9-rectangle.py).</li>
 <li>Task 11: Write a class Square that inherits from Rectangle (9-rectangle.py). (task based on 10-square.py).</li>
 <li>Advanced Task 12: Write a class MyInt that inherits from int.</li>
-<li>Advanced Task 13: Write a function that adds a new attribute to an object if it’s possible</li>
+<li>Advanced Task 13: Write a function that adds a new attribute to an object if it’s possible.</li>
 </body>
 <br>
 <br>
