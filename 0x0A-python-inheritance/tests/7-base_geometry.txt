@@ -1,0 +1,118 @@
+=======================
+Doctest in 7-base_geometry.py
+=======================
+
+This is a .txt file that tests all of the edge cases of the program:
+7-base_geometry.py
+
+It has two functions: area() and integer_validator().
+
+``area()`` raises an Exception with the message area() is not implemented.
+``integer_validator()`` validates the value.
+
+Case 1
+======
+
+Passing a string as the value
+
+::
+
+	>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+	>>> objBase = BaseGeometry()
+    	>>> objBase.integer_validator("name", "Hello")
+    	Traceback (most recent call last):
+    	TypeError: name must be an integer
+
+Case 2
+======
+
+Passing a negative integer as the value
+
+::
+
+	>>> objBase = BaseGeometry()
+    	>>> objBase.integer_validator("name", -15)
+    	Traceback (most recent call last):
+	ValueError: name must be greater than 0
+
+Case 3
+======
+
+Passing zero as the value
+
+::
+
+	>>> objBase = BaseGeometry()
+    	>>> objBase.integer_validator("name", 0)
+    	Traceback (most recent call last):
+    	ValueError: name must be greater than 0
+
+Case 4
+======
+
+Passing a float as the value
+
+::
+
+	>>> objBase = BaseGeometry()
+        >>> objBase.integer_validator("name", "3.00")
+        Traceback (most recent call last):
+        TypeError: name must be an integer
+
+Case 5
+======
+
+area() is not implemented
+
+::
+
+	>>> objBase = BaseGeometry()
+    	>>> objBase.area()
+    	Traceback (most recent call last):
+    	Exception: area() is not implemented
+
+Case 6
+======
+
+Passing a positive integer
+
+::
+
+	>>> objBase = BaseGeometry()
+    	>>> objBase.integer_validator("name", 5)
+
+Case 7
+======
+
+Passing only one argument(integer_validator)
+
+::
+
+	>>> objBase = BaseGeometry()
+    	>>> objBase.integer_validator("hey")
+    	Traceback (most recent call last):
+    	TypeError: integer_validator() missing 1 required positional argument: 'value'
+
+Case 8
+======
+
+Passing more than 2 arguments(integer_validator)
+
+::
+
+	>>> objBase = BaseGeometry()
+    	>>> objBase.integer_validator("name", 3, 8)
+    	Traceback (most recent call last):
+    	TypeError: integer_validator() takes 3 positional arguments but 4 were given
+
+Case 9
+======
+
+Passing an argument(area)
+
+::
+
+	>>> objBase = BaseGeometry()
+   	>>> objBase.area(5)
+    	Traceback (most recent call last):
+    	TypeError: area() takes 1 positional argument but 2 were given
