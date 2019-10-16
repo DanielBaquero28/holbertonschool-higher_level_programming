@@ -2,7 +2,6 @@
 class Student:
     """ Class that defines attributes of a Student. """
     desc = {}
-    complete_list = {}
 
     def __init__(self, first_name, last_name, age):
         """ Method constructor """
@@ -12,6 +11,9 @@ class Student:
 
     def to_json(self, attrs=None):
         """ Retrieves a dictionary representation of a Student instance """
+
+        complete_list = {}
+
         if hasattr(self, '__dict__'):
             desc = self.__dict__.copy()
 
@@ -20,9 +22,10 @@ class Student:
                 if type(element) is not str:
                     return (desc)
 
-            for key, value in ((range(len(attrs))), desc):
-                if attrs[key] == value:
-                    complete_list = desc[value]
-                    return (complete_list)
+            for key in range(len(attrs)):
+                for value in desc:
+                    if attrs[key] == value:
+                        complete_list[value] = desc[value]
+            return (complete_list)
 
         return (desc)
