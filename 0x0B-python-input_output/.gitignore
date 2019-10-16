@@ -1,2 +1,4 @@
 #Ignoring main.py files
 *-main.py
+#Ignoring .txt files
+*.txt
