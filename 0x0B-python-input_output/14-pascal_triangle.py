@@ -7,6 +7,8 @@ def combination(n, r):
 
 def pascal_triangle(n):
     triangle = []
+    if n <= 0:
+        return (" ")
     for count in range(n):
         row = []
         for item in range(count + 1):
