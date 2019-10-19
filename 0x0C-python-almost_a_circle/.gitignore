@@ -1,2 +1,4 @@
 #Ignoring *-main.py
 *-main.py
+#Ignoring json files
+*.json
