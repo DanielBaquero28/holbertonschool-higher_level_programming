@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+""" Imports module Base """
 from models.base import Base
 
 
