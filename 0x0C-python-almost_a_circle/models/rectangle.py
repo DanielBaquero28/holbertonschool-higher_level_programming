@@ -18,26 +18,26 @@ class Rectangle(Base):
         return (self.__width)
 
     @width.setter
-    def width(self, name, value):
+    def width(self, value):
         """ Sets the value of width with setter decorator """
         if not type(value) == int:
-            raise TypeError("{} must be an integer".format(name))
+            raise TypeError("width must be an integer")
         if value <= 0:
-            raise ValueError("{} must be > 0".format(name))
+            raise ValueError("width must be > 0")
         self.__width = value
 
     @property
     def height(self):
         """ Gets the value of height with property decorator """
-        return (self.__width)
+        return (self.__height)
 
     @height.setter
-    def height(self, name, value):
+    def height(self, value):
         """ Sets the value of height with setter decorator """
         if not type(value) == int:
-            raise TypeError("{} must be an integer".format(name))
+            raise TypeError("height must be an integer")
         if value <= 0:
-            raise ValueError("{} must be > 0".format(name))
+            raise ValueError("height must be > 0")
         self.__height = value
 
     @property
@@ -46,12 +46,12 @@ class Rectangle(Base):
         return (self.__x)
 
     @x.setter
-    def x(self, name, value):
+    def x(self, value):
         """ Sets the value of x with setter decorator """
         if not type(value) == int:
-            raise TypeError("{} must be an integer".format(name))
-        if value <= 0:
-            raise ValueError("{} must be > 0".format(name))
+            raise TypeError("x must be an integer")
+        if value < 0:
+            raise ValueError("x must be >= 0")
         self.__x = value
 
     @property
@@ -60,10 +60,10 @@ class Rectangle(Base):
         return (self.__y)
 
     @y.setter
-    def y(self, name, value):
+    def y(self, value):
         """ Sets the value of y with setter decorator """
         if not type(value) == int:
-            raise TypeError("{} must be an integer".format(name))
-        if value <= 0:
-            raise ValueError("{} must be > 0".format(name))
+            raise TypeError("y must be an integer")
+        if value < 0:
+            raise ValueError("y must be >= 0")
         self.__y = value
