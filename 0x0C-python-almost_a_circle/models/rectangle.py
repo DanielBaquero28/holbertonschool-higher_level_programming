@@ -87,3 +87,21 @@ class Rectangle(Base):
         """ Magic method that returns an object string representation """
         return ("[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.__x,
                                         self.__y, self.__width, self.__height))
+
+    def update(self, *args):
+        """ Assigns an argument to each attribute """
+        num_arg = 0
+        if len(args) != 0 and args:
+            for arg in args:
+                if num_arg == 0:
+                    self.id = args[0]
+                elif num_arg == 1:
+                    self.__width = args[1]
+                elif num_arg == 2:
+                    self.__height = args[2]
+                elif num_arg == 3:
+                    self.__x = args[3]
+                elif num_arg == 4:
+                    self.__y = args[4]
+                num_arg += 1
+            return
