@@ -74,8 +74,14 @@ class Rectangle(Base):
 
     def display(self):
         """ Prints in stdout the rectangle with '#' """
+        for i in range(self.__y):
+            print()
         for i in range(self.__height):
-            print("#" * self.__width)
+            for j in range(self.__x):
+                print("", end=" ")
+            for j in range(self.width):
+                print("#", end="")
+            print()
 
     def __str__(self):
         """ Magic method that returns an object string representation """
