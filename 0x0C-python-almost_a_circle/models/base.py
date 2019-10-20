@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """ Importing module json in order to manipulate it """
 import json
+import os
 
 
 class Base:
@@ -70,3 +71,19 @@ class Base:
 
         dummy_instances.update(**dictionary)
         return (dummy_instances)
+
+    @classmethod
+    def load_from_file(cls):
+        """ Methods that returns a list of instances """
+        desc = []
+        with open(str(cls.__name__) + '.json', encoding='utf-8') as my_file:
+            if my_file is None or my_file == '':
+                return (desc)
+            list_objs = cls.from_json_string(my_file.read())
+            for objs in list_objs:
+                desc.append(cls.create(**objs))
+            return (desc)
+
+        if not os.path.isfile(str(cls.__name__) + ".json"):
+            raise FileNotFoundError("File not found")
+            return ("[]")
