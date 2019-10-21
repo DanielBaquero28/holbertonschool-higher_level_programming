@@ -243,3 +243,6 @@ class TestRectangle(unittest.TestCase):
         """ Tests if only one argument is passed """
         with self.assertRaises(TypeError):
             obj1 = Rectangle(1)
+
+if __name__ == '__main__':
+    unittest.main()
