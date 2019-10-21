@@ -86,8 +86,8 @@ class Rectangle(Base):
 
     def __str__(self):
         """ Magic method that returns an object string representation """
-        return ("[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.__x,
-                                        self.__y, self.__width, self.__height))
+        return ("[Rectangle] ({}) {}/{} - {}/{}".format(
+            self.id, self.__x, self.__y, self.__width, self.__height))
 
     def update(self, *args, **kwargs):
         """ Assigns an argument to each attribute """
@@ -120,6 +120,6 @@ class Rectangle(Base):
                 self.__y = kwargs["y"]
 
     def to_dictionary(self):
-        """ Method that returns the dictionary representation of a Rectangle """
-        return {'id': self.id, 'width': self.__width, 'height': self.__height,
-                'x': self.__x, 'y': self.__y}
+        """ Method that returns the dictionary representation of Rectangle """
+        return {'id': self.id, 'width': self.__width,
+                'height': self.__height, 'x': self.__x, 'y': self.__y}

@@ -7,6 +7,7 @@ import os
 class Base:
     """ Base Class """
     __nb_objects = 0
+
     def __init__(self, id=None):
         """ Constructor method of the class """
         if id is not None:
@@ -36,7 +37,7 @@ class Base:
     def save_to_file(cls, list_objs):
         """ Writes the JSON string representation of list_objs to a file """
         desc = []
-        with open(str(cls.__name__) + '.json', mode='w', encoding='utf-8') as my_file:
+        with open(str(cls.__name__) + '.json', 'w') as my_file:
             if list_objs is None:
                 my_file.write(Base.to_json_string(desc))
                 return
