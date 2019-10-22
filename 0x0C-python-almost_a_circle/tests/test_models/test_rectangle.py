@@ -3,6 +3,7 @@
 import unittest
 from models.rectangle import Rectangle
 
+
 class TestRectangle(unittest.TestCase):
     """ Test Class. A testcase is created by subclassing unittest.TestCase. """
     def test_nb_objects(self):
@@ -26,31 +27,36 @@ class TestRectangle(unittest.TestCase):
         """ Tests if width is a string """
         with self.assertRaises(TypeError) as width_error:
             obj1 = Rectangle("hello", 1)
-        self.assertEqual('width must be an integer', str(width_error.exception))
+        self.assertEqual('width must be an integer',
+                         str(width_error.exception))
 
     def test_width_tuple(self):
         """ Tests if width is a tuple """
         with self.assertRaises(TypeError) as width_error:
             obj1 = Rectangle((1, 2, 3, 4), 1)
-        self.assertEqual('width must be an integer', str(width_error.exception))
+        self.assertEqual('width must be an integer',
+                         str(width_error.exception))
 
     def test_width_list(self):
         """ Tests if width is a list """
         with self.assertRaises(TypeError) as width_error:
             obj1 = Rectangle([1, 2, 3, 4], 1)
-        self.assertEqual('width must be an integer', str(width_error.exception))
+        self.assertEqual('width must be an integer',
+                         str(width_error.exception))
 
     def test_width_float(self):
         """ Tests if width is float """
         with self.assertRaises(TypeError) as width_error:
             obj1 = Rectangle(2.4, 1)
-        self.assertEqual('width must be an integer', str(width_error.exception))
+        self.assertEqual('width must be an integer',
+                         str(width_error.exception))
 
     def test_width_set(self):
         """ Tests if width is a set """
         with self.assertRaises(TypeError) as width_error:
             obj1 = Rectangle({1, 2, 3, 4, 5}, 1)
-        self.assertEqual('width must be an integer', str(width_error.exception))
+        self.assertEqual('width must be an integer',
+                         str(width_error.exception))
 
     def test_width_long(self):
         """ Tests if arg long int, eventhough it doesn't exist in Python3 """
@@ -60,13 +66,15 @@ class TestRectangle(unittest.TestCase):
         """ Tests if height is negative """
         with self.assertRaises(ValueError) as height_error:
             obj1 = Rectangle(1, -1)
-        self.assertEqual('height must be > 0', str(height_error.exception))
+        self.assertEqual('height must be > 0',
+                         str(height_error.exception))
 
     def test_height_zero(self):
         """ Tests if height is 0 """
         with self.assertRaises(ValueError) as height_error:
             obj1 = Rectangle(1, 0)
-        self.assertEqual('height must be > 0', str(height_error.exception))
+        self.assertEqual('height must be > 0',
+                         str(height_error.exception))
 
     def test_height_string(self):
         """ Tests if height is a string """
@@ -113,6 +121,7 @@ class TestRectangle(unittest.TestCase):
             obj1 = Rectangle(1, 2, -4)
         self.assertEqual('x must be >= 0',
                          str(x_error.exception))
+
     def test_x_zero(self):
         """ Tests if x is zero """
         obj1 = Rectangle(1, 2, 0)
@@ -162,6 +171,7 @@ class TestRectangle(unittest.TestCase):
             obj1 = Rectangle(1, 2, 4, -1)
         self.assertEqual('y must be >= 0',
                          str(y_error.exception))
+
     def test_y_zero(self):
         """ Tests if y is zero """
         obj1 = Rectangle(1, 2, 4, 0)
@@ -204,7 +214,6 @@ class TestRectangle(unittest.TestCase):
     def test_y_long(self):
         """ Tests if y is a long int, which in Python3 is the same as int """
         obj1 = Rectangle(1, 2, 3, 10000000000000)
-
 
     def test_correct(self):
         """ Tests correct input """

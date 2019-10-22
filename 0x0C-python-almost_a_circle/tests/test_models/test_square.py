@@ -27,31 +27,36 @@ class TestSquare(unittest.TestCase):
         """ Tests if size is a string """
         with self.assertRaises(TypeError) as width_error:
             obj1 = Square("hello", 1)
-        self.assertEqual('width must be an integer', str(width_error.exception))
+        self.assertEqual('width must be an integer',
+                         str(width_error.exception))
 
     def test_size_tuple(self):
         """ Tests if size is a tuple """
         with self.assertRaises(TypeError) as width_error:
             obj1 = Square((1, 2, 3, 4), 1)
-        self.assertEqual('width must be an integer', str(width_error.exception))
+        self.assertEqual('width must be an integer',
+                         str(width_error.exception))
 
     def test_size_list(self):
         """ Tests if size is a list """
         with self.assertRaises(TypeError) as width_error:
             obj1 = Square([1, 2, 3, 4], 1)
-        self.assertEqual('width must be an integer', str(width_error.exception))
+        self.assertEqual('width must be an integer',
+                         str(width_error.exception))
 
     def test_size_float(self):
         """ Tests if size is float """
         with self.assertRaises(TypeError) as width_error:
             obj1 = Square(2.4, 1)
-        self.assertEqual('width must be an integer', str(width_error.exception))
+        self.assertEqual('width must be an integer',
+                         str(width_error.exception))
 
     def test_size_set(self):
         """ Tests if size is a set """
         with self.assertRaises(TypeError) as width_error:
             obj1 = Square({1, 2, 3, 4, 5}, 1)
-        self.assertEqual('width must be an integer', str(width_error.exception))
+        self.assertEqual('width must be an integer',
+                         str(width_error.exception))
 
     def test_size_long(self):
         """ Tests if arg long int, eventhough it doesn't exist in Python3 """
@@ -63,6 +68,7 @@ class TestSquare(unittest.TestCase):
             obj1 = Square(1, -4)
         self.assertEqual('x must be >= 0',
                          str(x_error.exception))
+
     def test_x_zero(self):
         """ Tests if x is zero """
         obj1 = Square(1, 0)
@@ -112,6 +118,7 @@ class TestSquare(unittest.TestCase):
             obj1 = Square(1, 2, -1)
         self.assertEqual('y must be >= 0',
                          str(y_error.exception))
+
     def test_y_zero(self):
         """ Tests if y is zero """
         obj1 = Square(1, 2, 0)
@@ -154,7 +161,6 @@ class TestSquare(unittest.TestCase):
     def test_y_long(self):
         """ Tests if y is a long int, which in Python3 is the same as int """
         obj1 = Square(1, 2, 10000000000000)
-
 
     def test_correct(self):
         """ Tests correct input """

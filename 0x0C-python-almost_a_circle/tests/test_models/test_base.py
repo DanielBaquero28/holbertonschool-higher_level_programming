@@ -37,7 +37,6 @@ class TestBase(unittest.TestCase):
         obj1 = Base('Hello')
         self.assertEqual(obj1.id, 'Hello')
 
-
     def test_id_float(self):
         """ Tests if id is a float """
         obj1 = Base(3.0)
@@ -91,7 +90,7 @@ class TestBase(unittest.TestCase):
 
         Rectangle.save_to_file([r1, r2])
         desc = ('[{"y": 8, "x": 2, "id": 1, "width": 10, "height": 7},' +
-               ' {"y": 0, "x": 0, "id": 2, "width": 2, "height": 4}]')
+                ' {"y": 0, "x": 0, "id": 2, "width": 2, "height": 4}]')
         self.assertIsInstance(desc, str)
 
         with open('Rectangle.json', encoding='utf-8') as my_file:
@@ -113,7 +112,8 @@ class TestBase(unittest.TestCase):
         json_object = Rectangle.from_json_string(obj_string)
 
         self.assertIsInstance(obj_string, str)
-        self.assertEqual(json_object, [{'height': 4, 'width': 10}, {'height': 7, 'width': 1}])
+        self.assertEqual(json_object, [{'height': 4, 'width': 10},
+                                       {'height': 7, 'width': 1}])
         self.assertIsInstance(json_object, list)
 
     def test_create_rectangle(self):
