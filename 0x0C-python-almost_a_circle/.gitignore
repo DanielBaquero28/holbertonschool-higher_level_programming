@@ -2,3 +2,5 @@
 *-main.py
 #Ignoring json files
 *.json
+#Ignoring csv files
+*.csv
