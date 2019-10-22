@@ -2,6 +2,7 @@
 """ Importing module json in order to manipulate it """
 import json
 import os
+import csv
 
 
 class Base:
@@ -75,7 +76,7 @@ class Base:
 
     @classmethod
     def load_from_file(cls):
-        """ Methods that returns a list of instances """
+        """ Method that returns a list of instances """
         desc = []
         with open(str(cls.__name__) + '.json', encoding='utf-8') as my_file:
             if my_file is None or my_file == '':
@@ -86,5 +87,38 @@ class Base:
             return (desc)
 
         if not os.path.isfile(str(cls.__name__) + ".json"):
+            raise FileNotFoundError("File not found")
+            return ("[]")
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """ Serializes in csv """
+        desc = []
+        with open(str(cls.__name__) + ".csv", mode='w', encoding='utf-8') as csv_file:
+            wr = csv.writer(csv_file, delimiter=',')
+            if list_objs is None:
+                wr.writerow(desc)
+            else:
+                wr.writerow(list(list_objs[0].to_dictionary().keys()))
+                for instances in list_objs:
+                    wr.writerow(list(instances.to_dictionary().values()))
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """ Deserializes in csv """
+        desc = []
+        with open(str(cls.__name__) + ".csv", encoding='utf-8') as csv_file:
+            reader = csv.reader(csv_file, delimiter=',')
+            flag = 0
+            for row in reader:
+                if flag == 0:
+                    keys = row
+                    flag = 1
+                else:
+                    row = map(lambda x: int(x), row[:])
+                    desc.append(cls.create(**dict(zip(keys, row))))
+            return (desc)
+
+        if not os.path.isfile(str(cls.__name__) + ".csv"):
             raise FileNotFoundError("File not found")
             return ("[]")
