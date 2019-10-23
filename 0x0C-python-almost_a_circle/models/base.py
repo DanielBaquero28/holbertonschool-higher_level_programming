@@ -86,7 +86,6 @@ class Base:
 
         return (desc)
 
-
     @classmethod
     def save_to_file_csv(cls, list_objs):
         """ Serializes in csv """
