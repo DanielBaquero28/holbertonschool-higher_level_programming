@@ -64,12 +64,10 @@ class Base:
     def create(cls, **dictionary):
         """ Returns an instance of all attributes already set """
 
-        if cls.__name__ is 'Rectangle':
+        if cls.__name__ == "Rectangle":
             dummy_instances = cls(5, 5, 5, 5, 5)
-        elif cls.__name__ is 'Square':
+        elif cls.__name__ == "Square":
             dummy_instances = cls(5, 5, 5, 5)
-        else:
-            raise TypeError("cls has to be of class Rectangle or Square")
 
         dummy_instances.update(**dictionary)
         return (dummy_instances)
