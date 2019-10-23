@@ -94,7 +94,7 @@ class Base:
     def save_to_file_csv(cls, list_objs):
         """ Serializes in csv """
         desc = []
-        with open(str(cls.__name__) + ".csv", mode='w', encoding='utf-8') as csv_file:
+        with open(str(cls.__name__) + ".csv", mode='w') as csv_file:
             wr = csv.writer(csv_file, delimiter=',')
             if list_objs is None:
                 wr.writerow(desc)
