@@ -65,9 +65,9 @@ class Base:
         """ Returns an instance of all attributes already set """
 
         if cls.__name__ == "Rectangle":
-            dummy_instances = cls(5, 5, 5, 5, 5)
+            dummy_instances = cls(5, 5)
         elif cls.__name__ == "Square":
-            dummy_instances = cls(5, 5, 5, 5)
+            dummy_instances = cls(5)
 
         dummy_instances.update(**dictionary)
         return (dummy_instances)
