@@ -76,15 +76,16 @@ class Base:
     def load_from_file(cls):
         """ Method that returns a list of instances """
         desc = []
-        with open(str(cls.__name__) + '.json', encoding='utf-8') as my_file:
-            list_objs = Base.from_json_string(my_file.read())
-            for objs in list_objs:
-                desc.append(cls.create(**objs))
+        try:
+            with open(str(cls.__name__) + '.json', encoding='utf-8') as my_file:
+                list_objs = Base.from_json_string(my_file.read())
+                for objs in list_objs:
+                    desc.append(cls.create(**objs))
+        except Exception:
             return (desc)
 
-        if not os.path.isfile(str(cls.__name__) + ".json"):
-            raise FileNotFoundError("File not found")
-            return ("[]")
+        return (desc)
+
 
     @classmethod
     def save_to_file_csv(cls, list_objs):
