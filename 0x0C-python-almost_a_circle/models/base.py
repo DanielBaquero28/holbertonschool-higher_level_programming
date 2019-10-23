@@ -77,9 +77,7 @@ class Base:
         """ Method that returns a list of instances """
         desc = []
         with open(str(cls.__name__) + '.json', encoding='utf-8') as my_file:
-            if my_file is None or my_file == '':
-                return (desc)
-            list_objs = cls.from_json_string(my_file.read())
+            list_objs = Base.from_json_string(my_file.read())
             for objs in list_objs:
                 desc.append(cls.create(**objs))
             return (desc)
