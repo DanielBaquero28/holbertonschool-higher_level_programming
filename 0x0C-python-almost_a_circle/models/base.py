@@ -63,7 +63,7 @@ class Base:
     @classmethod
     def create(cls, **dictionary):
         """ Returns an instance of all attributes already set """
-        dummy_instances = 0
+
         if cls.__name__ is 'Rectangle':
             dummy_instances = cls(5, 5, 5, 5, 5)
         elif cls.__name__ is 'Square':
