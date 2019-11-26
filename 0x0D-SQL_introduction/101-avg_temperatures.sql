@@ -10,4 +10,4 @@ FROM
 GROUP BY
       test.city
 ORDER BY
-      test.avg_temp DESC;
+      avg_temp DESC;
