@@ -11,7 +11,7 @@ class Rectangle {
     const arrayI = [];
     for (let i = 0; i < this.height; i++) {
       for (let j = 0; j < this.width; j++) {
-	arrayI[j] = 'X';
+        arrayI[j] = 'X';
       }
       console.log(arrayI.join(''));
     }
