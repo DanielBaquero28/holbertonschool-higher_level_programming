@@ -7,12 +7,12 @@ class Rectangle {
     }
   }
   print () {
-    const array = [];
+    const arrayI = [];
     for (let i = 0; i < this.height; i++) {
       for (let j = 0; j < this.width; j++) {
-	array[j] = 'X';
+	arrayI[j] = 'X';
       }
-      console.log(array.join(''));
+      console.log(arrayI.join(''));
     }
   }
 }
