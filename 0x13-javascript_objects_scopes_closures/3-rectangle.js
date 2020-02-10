@@ -6,14 +6,14 @@ class Rectangle {
       this.height = h;
     }
   }
-    Rectangle.prototype.print = function() {
-      const array = [];
-      for (let i = 0; i < this.width; i++) {
-	for (let j = 0; j < this.height; j++) {
-	  array[j] = "X";
-	}
-	console.log(array.join(''));
+  print () {
+    const array = [];
+    for (let i = 0; i < this.height; i++) {
+      for (let j = 0; j < this.width; j++) {
+	array[j] = 'X';
       }
+      console.log(array.join(''));
     }
+  }
 }
 module.exports = Rectangle;
