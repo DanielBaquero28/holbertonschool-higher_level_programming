@@ -6,5 +6,5 @@ exports.nbOccurences = function (list, searchElement) {
       listO.append(list[i])
     }
   }
-  console.log(listO.length);
+  return (listO.length);
 }
