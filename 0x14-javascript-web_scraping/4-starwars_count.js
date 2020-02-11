@@ -12,7 +12,7 @@ request(requestURL, function (error, response, body) {
     const resultsList = content.results;
     for (const i of resultsList) {
       const charactersList = i.characters;
-      for (const j of charactersList) {
+      for (const j in charactersList) {
         if (targetSub.test(charactersList[j]) === true) {
           counter++;
         }
