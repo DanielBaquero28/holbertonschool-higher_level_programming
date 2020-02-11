@@ -8,12 +8,12 @@ request(requestURL, function (error, response, body) {
   if (error) {
     console.log(error);
   } else {
-    const content = JSON.parse(body)
+    const content = JSON.parse(body);
     const results = content.results;
     for (const i of results) {
-      const characters = i.characters;
-      for (const j of characters) {
-        if (targetSub.test(characters[j])=== true) {
+      const charactersList = i.characters;
+      for (const j of charactersList) {
+        if (targetSub.test(charactersList[j]) === true) {
           counter++;
         }
       }
