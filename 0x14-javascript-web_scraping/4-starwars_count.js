@@ -9,8 +9,8 @@ request(requestURL, function (error, response, body) {
     console.log(error);
   } else {
     const content = JSON.parse(body);
-    const results = content.results;
-    for (const i of results) {
+    const resultsList = content.results;
+    for (const i of resultsList) {
       const charactersList = i.characters;
       for (const j of charactersList) {
         if (targetSub.test(charactersList[j]) === true) {
