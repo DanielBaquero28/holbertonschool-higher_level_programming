@@ -1,5 +1,5 @@
 #!/usr/bin/node
-const file = require('file');
+const file = require('fs');
 
 const firstFile = file.readFileSync(process.argv[2]).toString();
 const secondFile = file.readFileSync(process.argv[3]).toString();
