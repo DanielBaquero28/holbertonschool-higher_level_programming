@@ -1,2 +1,4 @@
 # Ignoring main.js files
 *-main.js
+# Ignoring 100-data.js
+100-data.js
