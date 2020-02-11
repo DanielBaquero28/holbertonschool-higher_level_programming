@@ -1,7 +1,7 @@
 #!/usr/bin/node
 const request = require('request');
 
-const targetURL = 'https://swapi.co/api/people/18/';
+const targetSub = /18/;
 let counter = 0;
 request(process.argv[2], function (error, response, body) {
   if (error) {
@@ -9,10 +9,10 @@ request(process.argv[2], function (error, response, body) {
   } else {
     const content = JSON.parse(body)
     const results = content.results;
-    for (let i = 0; i < results.length; i++) {
-      const characters = results.characters;
-      for (let j = 0; j < characters.length; j++) {
-        if (['results'][i].characters[j] === targetURL) {
+    for (const i of results) {
+      const characters = i.characters;
+      for (const j of characters) {
+        if (targetSub.test(characters[j])=== true) {
           counter++;
         }
       }
