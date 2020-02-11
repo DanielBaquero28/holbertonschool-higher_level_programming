@@ -1,9 +1,10 @@
 #!/usr/bin/node
 const request = require('request');
 
-const targetSub = /18/;
-let counter = 0;
-request(process.argv[2], function (error, response, body) {
+const requestURL = process.argv[2];
+request(requestURL, function (error, response, body) {
+  const targetSub = /18/;
+  let counter = 0;
   if (error) {
     console.log(error);
   } else {
